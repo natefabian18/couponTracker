@@ -1,0 +1,45 @@
+﻿@page
+@model CouponTrackerWebsite.Pages.Coupon.ViewModel
+
+@{
+    ViewData["Title"] = "View";
+}
+
+
+<h2 align="center" style="background-color:lightgray;margin-bottom:10px">
+    <font color="black">
+        @Html.DisplayNameFor(model => model.coupon.title)
+    </font>
+</h2>
+
+<body>
+    <div style="background-color:lightgray;margin-bottom:5px;position:center">
+        <font color="black">
+            <dl class="dl-horizontal">
+                <dt style="text-align:right">
+                    Code:
+                </dt>
+                <dd style="text-align:left">
+                    @Html.DisplayNameFor(model => model.coupon.hyperlink)
+                </dd>
+            </dl>
+
+            <p style="position:center;margin-left:120.3px">
+                COUPON DESCRIPION
+            </p>
+        </font>
+    </div>
+
+    <div style="background-color:lightgray;margin-bottom:10px;position:center">
+        <font color="black">
+            <dl class="dl-horizontal">
+                <dt style="text-align:right">
+                    Expiration:
+                </dt>
+                <dd style="text-align:left">
+                    (--/--/----)
+                </dd>
+            </dl>
+        </font>
+    </div>
+</body>
