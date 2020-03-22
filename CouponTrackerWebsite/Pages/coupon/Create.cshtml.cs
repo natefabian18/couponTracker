@@ -6,12 +6,14 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using CouponTrackerWebsite.Data;
+using Microsoft.AspNetCore.Identity;
 
 namespace CouponTrackerWebsite.Pages.coupon
 {
     public class CreateModel : PageModel
     {
         private readonly CouponTrackerWebsite.Data.ApplicationDbContext _context;
+
 
         public CreateModel(CouponTrackerWebsite.Data.ApplicationDbContext context)
         {
@@ -24,7 +26,7 @@ namespace CouponTrackerWebsite.Pages.coupon
         }
 
         [BindProperty]
-        public coupon coupon { get; set; }
+        public CouponTrackerWebsite.Data.coupon coupon { get; set; }
 
         public async Task<IActionResult> OnPostAsync()
         {

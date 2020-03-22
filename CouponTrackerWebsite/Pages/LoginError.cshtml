@@ -1,0 +1,13 @@
+﻿@page
+@model Login_ErrorModel
+
+@{
+    ViewData["Title"] = "Error";
+}
+
+<h1 class="text-danger">Login Required</h1>
+<h2 class="text-danger">You must be a registered user to access some features.</h2>
+<p>
+   <a asp-area="Identity" asp-page="/Account/Register">Register</a> | 
+   <a asp-area="Identity" asp-page="/Account/Login">Login</a>
+</p>

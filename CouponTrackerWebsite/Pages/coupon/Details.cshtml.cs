@@ -18,7 +18,7 @@ namespace CouponTrackerWebsite.Pages.coupon
             _context = context;
         }
 
-        public coupon coupon { get; set; }
+        public CouponTrackerWebsite.Data.coupon coupon { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {

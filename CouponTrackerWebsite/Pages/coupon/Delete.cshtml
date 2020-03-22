@@ -1,8 +1,17 @@
 ﻿@page
 @model CouponTrackerWebsite.Pages.coupon.DeleteModel
+@using Microsoft.AspNetCore.Identity
+
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
 
 @{
     ViewData["Title"] = "Delete";
+}
+
+@if (!SignInManager.IsSignedIn(User))
+{
+    <meta http-equiv="Refresh" content="0; url=/LoginError" />
 }
 
 <h2>Delete</h2>
@@ -25,10 +34,11 @@
             @Html.DisplayFor(model => model.coupon.hyperlink)
         </dd>
     </dl>
-    
+
     <form method="post">
         <input type="hidden" asp-for="coupon.ID" />
         <input type="submit" value="Delete" class="btn btn-default" /> |
         <a asp-page="./Index">Back to List</a>
     </form>
 </div>
+
