@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using CouponTrackerWebsite.Data;
 
 
-namespace CouponTrackerWebsite.Pages.Coupon
+namespace CouponTrackerWebsite.Pages.coupon
 {
     public class ViewModel : PageModel
     {
@@ -18,7 +18,7 @@ namespace CouponTrackerWebsite.Pages.Coupon
             _context = context;
         }
 
-        public coupon coupon { get; set; }
+        public CouponTrackerWebsite.Data.coupon coupon { get; set; }
 
 
 

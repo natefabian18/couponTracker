@@ -7,6 +7,8 @@ using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
+using CouponTrackerWebsite.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace CouponTrackerWebsite
 {
@@ -15,6 +17,12 @@ namespace CouponTrackerWebsite
         public static void Main(string[] args)
         {
             CreateWebHostBuilder(args).Build().Run();
+            var optionsBuilder = new DbContextOptionsBuilder<ApplicationDbContext>();
+            // optionsBuilder.UseSqlite("Filename=./coupon.db");
+           // using ApplicationDbContext context = new ApplicationDbContext(optionsBuilder.Options);
+
+           
+
         }
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>

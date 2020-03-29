@@ -18,7 +18,7 @@ namespace CouponTrackerWebsite.Pages.coupon
             _context = context;
         }
 
-        public IList<coupon> coupon { get;set; }
+        public IList<CouponTrackerWebsite.Data.coupon> coupon { get;set; }
 
         public async Task OnGetAsync()
         {

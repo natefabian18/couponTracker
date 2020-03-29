@@ -19,7 +19,7 @@ namespace CouponTrackerWebsite.Pages.coupon
         }
 
         [BindProperty]
-        public coupon coupon { get; set; }
+        public CouponTrackerWebsite.Data.coupon coupon { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
