@@ -56,6 +56,7 @@ body {
   padding: 20px;
   display: flex;
   height: 25vh;
+  min-height: 160px;
 }
 
 .item > .productImage {
