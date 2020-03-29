@@ -1,9 +1,17 @@
-﻿@page
+﻿@page "{searchString?}"
 @model IndexModel
 @{
 ViewData["Title"] = "Home page";
 }
 <!-- container -->
+    <div>
+        <form>
+            <p>
+                search: <input type="text" asp-for="SearchString" />
+                <input type="submit" value="Submit" />
+            </p>
+        </form>
+    </div>
 <div class="row flexMaster">
     <!-- item -->
     <div class="item">
