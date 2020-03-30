@@ -4,14 +4,16 @@ using CouponTrackerWebsite.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace CouponTrackerWebsite.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200330173340_category")]
+    partial class category
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -31,9 +33,11 @@ namespace CouponTrackerWebsite.Data.Migrations
 
                     b.Property<string>("title");
 
-                    b.Property<string>("userSubmission");
+                    b.Property<string>("userSubmissionId");
 
                     b.HasKey("ID");
+
+                    b.HasIndex("userSubmissionId");
 
                     b.ToTable("coupon");
                 });
@@ -201,6 +205,13 @@ namespace CouponTrackerWebsite.Data.Migrations
                     b.HasKey("UserId", "LoginProvider", "Name");
 
                     b.ToTable("AspNetUserTokens");
+                });
+
+            modelBuilder.Entity("CouponTrackerWebsite.Data.coupon", b =>
+                {
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", "userSubmission")
+                        .WithMany()
+                        .HasForeignKey("userSubmissionId");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

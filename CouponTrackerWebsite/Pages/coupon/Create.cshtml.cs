@@ -14,7 +14,7 @@ namespace CouponTrackerWebsite.Pages.coupon
     {
         private readonly CouponTrackerWebsite.Data.ApplicationDbContext _context;
 
-
+ 
         public CreateModel(CouponTrackerWebsite.Data.ApplicationDbContext context)
         {
             _context = context;
@@ -35,6 +35,8 @@ namespace CouponTrackerWebsite.Pages.coupon
                 return Page();
             }
 
+            string user = User.Identity.Name;
+            coupon.userSubmission = user;
             _context.coupon.Add(coupon);
             await _context.SaveChangesAsync();
 

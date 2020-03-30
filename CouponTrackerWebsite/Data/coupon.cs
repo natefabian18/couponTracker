@@ -8,9 +8,10 @@ namespace CouponTrackerWebsite.Data
 {
     public class coupon
     {
-        public virtual IdentityUser userSubmission { get; set; }
+        public string userSubmission { get; set; }
         public int ID { get; set; }
         public string title { get; set; }
         public string hyperlink { get; set; }
+        public Category category { get; set; }
     }
 }
