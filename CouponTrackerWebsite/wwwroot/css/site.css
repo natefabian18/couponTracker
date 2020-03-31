@@ -28,6 +28,44 @@ body {
     margin: 15px;
 }
 
+#main-nav {
+    background-color: #0094ff;
+    color: black;
+}
+
+#nav-text ul li a{
+    color: black;
+}
+
+#nav-asp-page {
+    color: black;
+}
+
+#main-body {
+    padding-left: 45px;
+    padding-right: 45px;
+    background-color: lightgray;
+}
+
+.view-text {
+    color: black;
+    margin-bottom: 10px;
+    position: center;
+}
+
+#view-title {
+    position:center;
+    margin-bottom:10px;
+
+}
+
+#footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 2.5rem; /* Footer height */
+}
+
 /* Hide/rearrange for smaller screens */
 @media screen and (max-width: 767px) {
     /* Hide captions */
