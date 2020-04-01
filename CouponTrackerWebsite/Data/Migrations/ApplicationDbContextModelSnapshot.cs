@@ -25,6 +25,12 @@ namespace CouponTrackerWebsite.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<string>("Code");
+
+                    b.Property<string>("Description");
+
+                    b.Property<DateTime>("Expiration");
+
                     b.Property<string>("hyperlink");
 
                     b.Property<string>("title");

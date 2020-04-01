@@ -17,12 +17,6 @@ namespace CouponTrackerWebsite
         public static void Main(string[] args)
         {
             CreateWebHostBuilder(args).Build().Run();
-            var optionsBuilder = new DbContextOptionsBuilder<ApplicationDbContext>();
-            // optionsBuilder.UseSqlite("Filename=./coupon.db");
-           // using ApplicationDbContext context = new ApplicationDbContext(optionsBuilder.Options);
-
-           
-
         }
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
