@@ -20,9 +20,18 @@
             <th>
                 @Html.DisplayNameFor(model => model.coupon[0].title)
             </th>
+			<th>
+	            @Html.DisplayNameFor(model => model.coupon[0].Code)
+	        </th>
             <th>
                 @Html.DisplayNameFor(model => model.coupon[0].hyperlink)
             </th>
+			<th>
+				@Html.DisplayNameFor(model => model.coupon[0].Description)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.coupon[0].Expiration)
+			</th>
             <th></th>
         </tr>
     </thead>
@@ -30,18 +39,39 @@
         @foreach (var item in Model.coupon)
         {
             <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.title)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.hyperlink)
-                </td>
-                <td>
-                    <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
-                    <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
-                    <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
-                    </td>
-            </tr>
+	            <td class="col-sm-2">
+	                <a asp-page="./View" asp-route-id="@item.ID">@Html.DisplayFor(modelItem => item.title)</a>
+	            </td>
+	            <td class="col-sm-1">
+	                @Html.DisplayFor(modelitem => item.Code)
+	            </td>
+	            <td class="col-sm-1">
+	                @Html.DisplayFor(modelItem => item.hyperlink)
+	            </td>
+	
+	            <td class="col-md-4">
+	                @Html.DisplayFor(model => item.Description)
+	            </td>
+	            <td class="col-sm-2">
+	                @if (item.Expiration <= DateTime.Now)
+	                {
+	                    <p id="expired">
+	                        EXPIRED
+	                    </p>
+	                }
+	                @if (item.Expiration > DateTime.Now)
+	                {
+	                    <p>
+	                        @Html.DisplayFor(ModelItem => item.Expiration.Date)
+	                    </p>
+	                }
+	            </td>
+	            <td class="col-md-4">
+	                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
+	                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
+	                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+	            </td>
+	        </tr>
         }
     </tbody>
 </table>
