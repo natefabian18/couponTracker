@@ -1,0 +1,12 @@
+﻿@page
+@model Login_ErrorModel
+
+@{
+    ViewData["Title"] = "Error";
+}
+
+<h1 class="text-danger">Error: Unauthorized Access</h1>
+<h3 class="text-danger">You cannot edit or delete coupons submitted by other users.</h3>
+<p>
+   <a asp-page="/coupon/Index">Go Back</a>
+</p>

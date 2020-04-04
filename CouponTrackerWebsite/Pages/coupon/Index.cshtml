@@ -29,9 +29,15 @@
 			<th>
 				@Html.DisplayNameFor(model => model.coupon[0].Description)
 			</th>
+            <th>
+                Category
+            </th>
 			<th>
 				@Html.DisplayNameFor(model => model.coupon[0].Expiration)
 			</th>
+            <th>
+                Submitted By
+            </th>
             <th></th>
         </tr>
     </thead>
@@ -52,6 +58,9 @@
 	            <td class="col-md-4">
 	                @Html.DisplayFor(model => item.Description)
 	            </td>
+                <td>
+                    @Html.DisplayFor(model => item.category)
+                </td>
 	            <td class="col-sm-2">
 	                @if (item.Expiration <= DateTime.Now)
 	                {
@@ -66,9 +75,11 @@
 	                    </p>
 	                }
 	            </td>
+                <td>
+                    @Html.DisplayFor(model => item.userSubmission)
+                </td>
 	            <td class="col-md-4">
 	                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
-	                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
 	                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
 	            </td>
 	        </tr>
