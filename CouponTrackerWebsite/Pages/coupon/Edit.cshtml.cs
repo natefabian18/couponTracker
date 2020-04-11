@@ -45,6 +45,8 @@ namespace CouponTrackerWebsite.Pages.coupon
                 return Page();
             }
 
+            string user = User.Identity.Name;
+            coupon.userSubmission = user;
             _context.Attach(coupon).State = EntityState.Modified;
 
             try

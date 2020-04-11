@@ -14,27 +14,42 @@
 <p>
     <a asp-page="Create">Create New</a>
 </p>
+<div class="row">
+    <form class="form-inline">
+        <div class="col-12 col-md-3">
+            Search by Category:
+        </div>
+        <div class="col-12 col-md-3">
+            <select class="form-control" asp-for="CategorySearch" asp-items="Html.GetEnumSelectList<Category>()">
+            </select>
+        </div>
+        <div class="col-12 col-md-3">
+            <input type="submit" value="Submit" class="btn btn-primary" />
+        </div>
+    </form>
+</div>
+
 <table class="table">
     <thead>
         <tr>
             <th>
                 @Html.DisplayNameFor(model => model.coupon[0].title)
             </th>
-			<th>
-	            @Html.DisplayNameFor(model => model.coupon[0].Code)
-	        </th>
+            <th>
+                @Html.DisplayNameFor(model => model.coupon[0].Code)
+            </th>
             <th>
                 @Html.DisplayNameFor(model => model.coupon[0].hyperlink)
             </th>
-			<th>
-				@Html.DisplayNameFor(model => model.coupon[0].Description)
-			</th>
+            <th>
+                @Html.DisplayNameFor(model => model.coupon[0].Description)
+            </th>
             <th>
                 Category
             </th>
-			<th>
-				@Html.DisplayNameFor(model => model.coupon[0].Expiration)
-			</th>
+            <th>
+                @Html.DisplayNameFor(model => model.coupon[0].Expiration)
+            </th>
             <th>
                 Submitted By
             </th>
@@ -45,44 +60,44 @@
         @foreach (var item in Model.coupon)
         {
             <tr>
-	            <td class="col-sm-2">
-	                <a asp-page="./View" asp-route-id="@item.ID">@Html.DisplayFor(modelItem => item.title)</a>
-	            </td>
-	            <td class="col-sm-1">
-	                @Html.DisplayFor(modelitem => item.Code)
-	            </td>
-	            <td class="col-sm-1">
-	                @Html.DisplayFor(modelItem => item.hyperlink)
-	            </td>
-	
-	            <td class="col-md-4">
-	                @Html.DisplayFor(model => item.Description)
-	            </td>
+                <td class="col-sm-2">
+                    <a asp-page="./View" asp-route-id="@item.ID">@Html.DisplayFor(modelItem => item.title)</a>
+                </td>
+                <td class="col-sm-1">
+                    @Html.DisplayFor(modelitem => item.Code)
+                </td>
+                <td class="col-sm-1">
+                    @Html.DisplayFor(modelItem => item.hyperlink)
+                </td>
+
+                <td class="col-md-4">
+                    @Html.DisplayFor(model => item.Description)
+                </td>
                 <td>
                     @Html.DisplayFor(model => item.category)
                 </td>
-	            <td class="col-sm-2">
-	                @if (item.Expiration <= DateTime.Now)
-	                {
-	                    <p id="expired">
-	                        EXPIRED
-	                    </p>
-	                }
-	                @if (item.Expiration > DateTime.Now)
-	                {
-	                    <p>
-	                        @Html.DisplayFor(ModelItem => item.Expiration.Date)
-	                    </p>
-	                }
-	            </td>
+                <td class="col-sm-2">
+                    @if (item.Expiration <= DateTime.Now)
+                    {
+                        <p id="expired">
+                            EXPIRED
+                        </p>
+                    }
+                    @if (item.Expiration > DateTime.Now)
+                    {
+                        <p>
+                            @Html.DisplayFor(ModelItem => item.Expiration.Date)
+                        </p>
+                    }
+                </td>
                 <td>
                     @Html.DisplayFor(model => item.userSubmission)
                 </td>
-	            <td class="col-md-4">
-	                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
-	                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
-	            </td>
-	        </tr>
+                <td class="col-md-4">
+                    <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
+                    <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+                </td>
+            </tr>
         }
     </tbody>
 </table>

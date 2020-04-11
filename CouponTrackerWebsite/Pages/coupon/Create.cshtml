@@ -44,14 +44,10 @@
             </div>
             <div class="form-group">
                 <label asp-for="coupon.category" class="control-label"></label>
-                @Html.DropDownList("CategoryPick",
-                                   new SelectList(Enum.GetValues(typeof(Category))),
-                                   "Select Category",
-                                   new { @class = "form-control" })
-
+                <select class="form-control" asp-for="coupon.category" asp-items="Html.GetEnumSelectList<Category>()">
+                </select>
                 <span asp-validation-for="coupon.category" class="text-danger"></span>
             </div>
-
             <div class="form-group">
                 <label asp-for="coupon.Expiration" class="control-label"></label>
                 <input asp-for="coupon.Expiration" class="form-control" />
