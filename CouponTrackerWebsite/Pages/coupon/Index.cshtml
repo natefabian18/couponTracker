@@ -21,6 +21,7 @@
         </div>
         <div class="col-12 col-md-3">
             <select class="form-control" asp-for="CategorySearch" asp-items="Html.GetEnumSelectList<Category>()">
+                <option value="">View All</option>>
             </select>
         </div>
         <div class="col-12 col-md-3">
@@ -101,3 +102,4 @@
         }
     </tbody>
 </table>
+<script src="~/js/CouponView.js"> </script>
