@@ -1,10 +1,11 @@
-<<<<<<< HEAD
-﻿@page
+
+@page
 @model CouponTrackerWebsite.Pages.coupon.DeleteModel
 @using Microsoft.AspNetCore.Identity
 
 @inject SignInManager<IdentityUser> SignInManager
 @inject UserManager<IdentityUser> UserManager
+
 
 @{
     ViewData["Title"] = "Delete";
@@ -28,29 +29,29 @@
         <dd>
             @Html.DisplayFor(model => model.coupon.title)
         </dd>
-	    <dt>
-	        @Html.DisplayNameFor(model => model.coupon.Code)
-	    </dt>
-	    <dd>
-	        @Html.DisplayFor(model => model.coupon.Code)
+        <dt>
+            @Html.DisplayNameFor(model => model.coupon.Code)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.coupon.Code)
         <dt>
             @Html.DisplayNameFor(model => model.coupon.hyperlink)
         </dt>
         <dd>
             @Html.DisplayFor(model => model.coupon.hyperlink)
         </dd>
-		<dt>
-	        @Html.DisplayNameFor(model => model.coupon.Description)
-	    </dt>
-	    <dd>
-	        @Html.DisplayFor(model => model.coupon.Description)
-	    </dd>
-	    <dt>
-	        @Html.DisplayNameFor(model => model.coupon.Expiration)
-	    </dt>
-	    <dd>
-	        @Html.DisplayFor(model => model.coupon.Expiration)
-	    </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.coupon.Description)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.coupon.Description)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.coupon.Expiration)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.coupon.Expiration)
+        </dd>
     </dl>
 
     <form method="post">

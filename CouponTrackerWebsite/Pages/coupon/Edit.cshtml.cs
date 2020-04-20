@@ -35,6 +35,11 @@ namespace CouponTrackerWebsite.Pages.coupon
             {
                 return NotFound();
             }
+
+            if (User.Identity.Name != coupon.userSubmission)
+            {
+                return RedirectToPage("/UserError");
+            }
             return Page();
         }
 

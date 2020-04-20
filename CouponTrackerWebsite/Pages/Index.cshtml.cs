@@ -10,6 +10,9 @@ namespace CouponTrackerWebsite.Pages
 {
     public class IndexModel : PageModel
     {
+
+        [BindProperty]
+        public string SearchString { get; set; }
         public void OnGet()
         {
             System.Diagnostics.Debug.WriteLine("My debug string here");
