@@ -1,4 +1,4 @@
-
+﻿
 ﻿@using Microsoft.AspNetCore.Identity
 
 @inject SignInManager<IdentityUser> SignInManager
@@ -41,6 +41,7 @@
                     <li><a asp-page="/About">About</a></li>
                     <li><a asp-page="/coupon/Index">Deals</a></li>
                     <li><a asp-page="/Contact">Contact</a></li>
+                    <li><a asp-page="/search/Search">Search</a></li>
                 </ul>
                 @if (SignInManager.IsSignedIn(User))
                 {
