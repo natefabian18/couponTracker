@@ -1,9 +1,10 @@
 ﻿@page
 @model CouponTrackerWebsite.Pages.coupon.CreateModel
 @using Microsoft.AspNetCore.Identity
+@using CouponTrackerWebsite.Data
 
-@inject SignInManager<IdentityUser> SignInManager
-@inject UserManager<IdentityUser> UserManager
+@inject SignInManager<AppUser> SignInManager
+@inject UserManager<AppUser> UserManager
 
 @{
     ViewData["Title"] = "Create";

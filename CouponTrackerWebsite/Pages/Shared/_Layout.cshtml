@@ -1,8 +1,8 @@
-﻿
 ﻿@using Microsoft.AspNetCore.Identity
 
-@inject SignInManager<IdentityUser> SignInManager
-@inject UserManager<IdentityUser> UserManager
+
+@inject SignInManager<AppUser> SignInManager
+@inject UserManager<AppUser> UserManager
 
 <!DOCTYPE html>
 <html>
@@ -45,9 +45,9 @@
                 </ul>
                 @if (SignInManager.IsSignedIn(User))
                 {
-            <ul class="nav navbar-nav">
-                <li><a asp-page="/coupon/Create">New</a></li>
-            </ul>
+                    <ul class="nav navbar-nav">
+                        <li><a asp-page="/coupon/Create">New</a></li>
+                    </ul>
                 }
                 <partial name="_LoginPartial" />
             </div>

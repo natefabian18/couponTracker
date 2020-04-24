@@ -7,7 +7,7 @@ using CouponTrackerWebsite.Data;
 
 namespace CouponTrackerWebsite.Data
 {
-    public class ApplicationDbContext : IdentityDbContext
+    public class ApplicationDbContext : IdentityDbContext<AppUser>
     {
         public ApplicationDbContext() { }
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)

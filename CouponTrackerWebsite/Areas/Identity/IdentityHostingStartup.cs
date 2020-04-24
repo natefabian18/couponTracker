@@ -16,6 +16,7 @@ namespace CouponTrackerWebsite.Areas.Identity
         {
             builder.ConfigureServices((context, services) => {
             });
+
         }
     }
 }

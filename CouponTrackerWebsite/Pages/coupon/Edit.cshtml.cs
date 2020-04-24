@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using CouponTrackerWebsite.Data;
+using Microsoft.AspNetCore.Identity;
 
 namespace CouponTrackerWebsite.Pages.coupon
 {
@@ -36,7 +37,7 @@ namespace CouponTrackerWebsite.Pages.coupon
                 return NotFound();
             }
 
-            if (User.Identity.Name != coupon.userSubmission)
+            if ((User.Identity.Name != coupon.userSubmission))
             {
                 return RedirectToPage("/UserError");
             }

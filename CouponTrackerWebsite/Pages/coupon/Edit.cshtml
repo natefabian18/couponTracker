@@ -2,8 +2,10 @@
 @model CouponTrackerWebsite.Pages.coupon.EditModel
 @using Microsoft.AspNetCore.Identity
 
-@inject SignInManager<IdentityUser> SignInManager
-@inject UserManager<IdentityUser> UserManager
+@using CouponTrackerWebsite.Data
+
+@inject SignInManager<AppUser> SignInManager
+@inject UserManager<AppUser> UserManager
 
 
 @{

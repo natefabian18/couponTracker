@@ -38,8 +38,9 @@ namespace CouponTrackerWebsite
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
-            services.AddDefaultIdentity<IdentityUser>()
-                .AddEntityFrameworkStores<ApplicationDbContext>();
+            services.AddDefaultIdentity<AppUser>()
+                    .AddEntityFrameworkStores<ApplicationDbContext>()
+                    .AddDefaultUI();
 
             services.Configure<IdentityOptions>(options =>
             {
