@@ -5,17 +5,26 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using CouponTrackerWebsite.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace CouponTrackerWebsite.Pages
 {
     public class IndexModel : PageModel
     {
+        private readonly CouponTrackerWebsite.Data.ApplicationDbContext _context;
 
-        [BindProperty]
-        public string SearchString { get; set; }
-        public void OnGet()
+        public IndexModel(CouponTrackerWebsite.Data.ApplicationDbContext context)
         {
-            System.Diagnostics.Debug.WriteLine("My debug string here");
+            _context = context;
+        }
+
+        public IList<CouponTrackerWebsite.Data.coupon> coupon { get; set; }
+
+        public async Task OnGet()
+        {
+            var testCoupons = from m in _context.coupon
+                              select m;
+            coupon = await testCoupons.ToListAsync();
         }
     }
 }
