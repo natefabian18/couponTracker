@@ -14,10 +14,12 @@ namespace CouponTrackerWebsite.Pages.coupon
     public class EditModel : PageModel
     {
         private readonly CouponTrackerWebsite.Data.ApplicationDbContext _context;
+        private readonly UserManager<AppUser> _userManager;
 
-        public EditModel(CouponTrackerWebsite.Data.ApplicationDbContext context)
+        public EditModel(CouponTrackerWebsite.Data.ApplicationDbContext context, UserManager<AppUser> userManager)
         {
             _context = context;
+            _userManager = userManager;
         }
 
         [BindProperty]
@@ -37,7 +39,8 @@ namespace CouponTrackerWebsite.Pages.coupon
                 return NotFound();
             }
 
-            if ((User.Identity.Name != coupon.userSubmission))
+            AppUser currentUser = _context.Users.FirstOrDefault(x => x.Id == _userManager.GetUserId(HttpContext.User));
+            if ((User.Identity.Name != coupon.userSubmission) && (currentUser.ApplicationUser == AppUser.AppUserType.Standard))
             {
                 return RedirectToPage("/UserError");
             }

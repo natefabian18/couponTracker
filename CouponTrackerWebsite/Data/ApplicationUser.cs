@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace CouponTrackerWebsite.Data
 {
-        public class AppUser : IdentityUser
+       public class AppUser : IdentityUser
         {
-            public enum AppUserType
+        public AppUserType? ApplicationUser { get; set; }
+        public enum AppUserType
             {
                 Standard = 0,
                 Mod = 1,

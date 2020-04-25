@@ -6,16 +6,19 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using CouponTrackerWebsite.Data;
+using Microsoft.AspNetCore.Identity;
 
 namespace CouponTrackerWebsite.Pages.coupon
 {
     public class DeleteModel : PageModel
     {
         private readonly CouponTrackerWebsite.Data.ApplicationDbContext _context;
+        private readonly UserManager<AppUser> _userManager;
 
-        public DeleteModel(CouponTrackerWebsite.Data.ApplicationDbContext context)
+        public DeleteModel(CouponTrackerWebsite.Data.ApplicationDbContext context, UserManager<AppUser> userManager)
         {
             _context = context;
+            _userManager = userManager;
         }
 
         [BindProperty]
@@ -34,7 +37,9 @@ namespace CouponTrackerWebsite.Pages.coupon
             {
                 return NotFound();
             }
-            if (User.Identity.Name != coupon.userSubmission)
+
+            AppUser currentUser = _context.Users.FirstOrDefault(x => x.Id == _userManager.GetUserId(HttpContext.User));
+            if ((User.Identity.Name != coupon.userSubmission) && (currentUser.ApplicationUser == AppUser.AppUserType.Standard))
             {
                 return RedirectToPage("/UserError");
             }
