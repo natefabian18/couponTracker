@@ -119,7 +119,7 @@ body {
 }
 
 .item > .textContent {
-  width: 75%;
+  width: 100%;
   padding: 10px;
 }
 
@@ -128,16 +128,17 @@ body {
 }
 
 .textContent > .Row1 {
-  height: 25%;
+  height: 75%;
+  font-size: 2.5em;
   justify-content: space-between;
-  font-size: 1.2em;
+
 }
 .textContent > .Row2 {
-  height: 50%;
-  font-size: 2em;
-  align-items: center;
+    height: 25%;
+    font-size: 1em;
+    justify-content: space-between;
 }
-.textContent > .Row3 {
-  height: 25%;
-  justify-content: space-between;
+
+.Row1 > a {
+    font-size: 0.7em;
 }
