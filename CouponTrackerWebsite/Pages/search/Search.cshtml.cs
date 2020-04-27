@@ -20,11 +20,20 @@ namespace CouponTrackerWebsite.Pages.coupon
 
         public IList<CouponTrackerWebsite.Data.coupon> coupon { get;set; }
 
-        public async Task OnGetAsync()
+        public async Task OnGet()
         {
             coupon = await _context.coupon.ToListAsync();
             System.Diagnostics.Debug.WriteLine("*");
             System.Diagnostics.Debug.WriteLine(SearchString);
+
+            var testCoupons = from m in _context.coupon
+                              select m;
+            if (!string.IsNullOrEmpty(SearchString))
+            {
+                testCoupons = testCoupons.Where(s => s.Description.Contains(SearchString));
+            }
+
+            coupon = await testCoupons.ToListAsync();
         }
 
         [BindProperty(SupportsGet = true)]
