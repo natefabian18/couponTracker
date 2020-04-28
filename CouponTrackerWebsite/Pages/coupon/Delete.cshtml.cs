@@ -39,7 +39,7 @@ namespace CouponTrackerWebsite.Pages.coupon
             }
 
             AppUser currentUser = _context.Users.FirstOrDefault(x => x.Id == _userManager.GetUserId(HttpContext.User));
-            if ((User.Identity.Name != coupon.userSubmission) && (currentUser.ApplicationUser == AppUser.AppUserType.Standard))
+            if ((User.Identity.Name != null) && (User.Identity.Name != coupon.userSubmission) && (currentUser.ApplicationUser == AppUser.AppUserType.Standard))
             {
                 return RedirectToPage("/UserError");
             }

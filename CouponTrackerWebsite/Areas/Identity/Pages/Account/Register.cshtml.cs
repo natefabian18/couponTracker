@@ -67,8 +67,10 @@ namespace CouponTrackerWebsite.Areas.Identity.Pages.Account
             returnUrl = returnUrl ?? Url.Content("~/");
             if (ModelState.IsValid)
             {
-                var user = new AppUser { UserName = Input.Email, Email = Input.Email };
+                //defaults new user as a standart member
+                var user = new AppUser { UserName = Input.Email, Email = Input.Email , ApplicationUser = 0};
                 var result = await _userManager.CreateAsync(user, Input.Password);
+               
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User created a new account with password.");

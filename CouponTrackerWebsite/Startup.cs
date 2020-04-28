@@ -50,7 +50,6 @@ namespace CouponTrackerWebsite
                 options.Password.RequireUppercase = true;
                 options.Password.RequireNonAlphanumeric = false;
                 options.Password.RequiredLength = 8;
-                options.Password.RequireDigit = true;
 
                 //Account Lockout Settings
                 options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(5);
