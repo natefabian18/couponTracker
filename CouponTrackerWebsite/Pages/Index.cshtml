@@ -10,56 +10,14 @@
         @foreach (var item in Model.coupon)
         {
             <div class="item">
-                <div class="productImage">
-                    <img src="https://www.wolflair.com/wp-content/uploads/2017/01/placeholder.jpg"
-                         alt="palceholder is broken plz fix" />
-                </div>
                 <div class="textContent">
                     <div class="Row1">
-                        <div class="itemStore">Store 1</div>
-                        <div class="itemExpires">Expires <span class="itemExpiresSpan">@Html.DisplayFor(modelitem => item.Expiration)</span></div>
+                        <div class="itemDescription">@Html.DisplayFor(modelitem => item.Description)</div> <a href="/coupon/View?id=@Html.DisplayFor(modelitem => item.ID)" target="blank_">VIEW COUPON</a>
                     </div>
                     <div class="Row2">
-                        <div class="itemDescription"><a href="/coupon/View?id=@Html.DisplayFor(modelitem => item.ID)" target="blank_">@Html.DisplayFor(modelitem => item.Description)</a></div>
-                    </div>
-                    <div class="Row3">
-                        <div class="itemRating">
-                            <span class="fa fa-star starFilled"></span>
-                            <span class="fa fa-star starFilled"></span>
-                            <span class="fa fa-star starFilled"></span>
-                            <span class="fa fa-star starFilled"></span>
-                            <span class="fa fa-star starFilled"></span>
-                            <span class="fa fa-star"></span>
-                        </div>
-                        <div class="itemUser">@Html.DisplayFor(modelitem => item.userSubmission)</div>
+                        <div class="itemUser">@Html.DisplayFor(modelitem => item.userSubmission)</div><div class="itemExpires">Expires <span class="itemExpiresSpan">@Html.DisplayFor(modelitem => item.Expiration)</span></div>
                     </div>
                 </div>
             </div>
         }
-        <!--
-    <div class="item">
-        <div class="productImage"><img src="https://www.wolflair.com/wp-content/uploads/2017/01/placeholder.jpg"
-                alt="palceholder is broken plz fix" /></div>
-        <div class="textContent">
-            <div class="Row1">
-                <div class="itemStore">Store 1</div>
-                <div class="itemExpires">Expires <span class="itemExpiresSpan">12/25/2021</span></div>
-            </div>
-            <div class="Row2">
-                <div class="itemDescription"><a href="#" target="blank_"> 50% OFF X product</a></div>
-            </div>
-            <div class="Row3">
-                <div class="itemRating">
-                    <span class="fa fa-star starFilled"></span>
-                    <span class="fa fa-star starFilled"></span>
-                    <span class="fa fa-star starFilled"></span>
-                    <span class="fa fa-star starFilled"></span>
-                    <span class="fa fa-star starFilled"></span>
-                    <span class="fa fa-star"></span>
-                </div>
-                <div class="itemUser">User9898495</div>
-            </div>
-        </div>
-    </div>
-    -->
     </div>
