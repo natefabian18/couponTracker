@@ -7,10 +7,15 @@
     var selectQueryString = "SELECT * FROM Coupon ORDER BY ID";
 }
 
+<h2>Search</h2>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
 <div>
     <form>
         <p>
-            search: <input type="text" asp-for="SearchString" />
+            Search by description: <input type="text" asp-for="SearchString" />
             <input type="submit" value="Submit" />
         </p>
     </form>
@@ -66,20 +71,24 @@
             </td>
             <td class="col-sm-2">
                 @if (item.Expiration <= DateTime.Now)
-	                {
-                <p id="expired">
-                    EXPIRED
-                </p>
-	                }
+                {
+                    <p id="expired">
+                        EXPIRED
+                    </p>
+                }
                 @if (item.Expiration > DateTime.Now)
-	                {
-                <p>
-                    @Html.DisplayFor(ModelItem => item.Expiration.Date)
-                </p>
-	                }
+                {
+                    <p>
+                        @Html.DisplayFor(ModelItem => item.Expiration.Date)
+                    </p>
+                }
             </td>
             <td>
                 @Html.DisplayFor(model => item.userSubmission)
+            </td>
+            <td class="col-md-4">
+                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
             </td>
         </tr>
         }

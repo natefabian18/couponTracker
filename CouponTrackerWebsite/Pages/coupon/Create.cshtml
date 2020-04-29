@@ -23,33 +23,33 @@
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="coupon.title" class="control-label"></label>
+                <label asp-for="coupon.title" class="control-label">Title of coupon:</label>
                 <input asp-for="coupon.title" class="form-control" />
                 <span asp-validation-for="coupon.title" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="coupon.Code" class="control-label"></label>
+                <label asp-for="coupon.Code" class="control-label">Redemption code for the coupon:</label>
                 <input asp-for="coupon.Code" class="form-control" />
                 <span asp-validation-for="coupon.Code" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="coupon.hyperlink" class="control-label"></label>
+                <label asp-for="coupon.hyperlink" class="control-label">Paste or type the link to the coupon's site:</label>
                 <input asp-for="coupon.hyperlink" class="form-control" />
                 <span asp-validation-for="coupon.hyperlink" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="coupon.Description" class="control-label"></label>
+                <label asp-for="coupon.Description" class="control-label">Brief description of coupon:</label>
                 <input asp-for="coupon.Description" class="form-control" />
                 <span asp-validation-for="coupon.Description" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="coupon.category" class="control-label"></label>
+                <label asp-for="coupon.category" class="control-label">Select a category:</label>
                 <select class="form-control" asp-for="coupon.category" asp-items="Html.GetEnumSelectList<Category>()">
                 </select>
                 <span asp-validation-for="coupon.category" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="coupon.Expiration" class="control-label"></label>
+                <label asp-for="coupon.Expiration" class="control-label">Expiration Date (MM/DD/YYYY):</label>
                 <input asp-for="coupon.Expiration" class="form-control" />
                 <span asp-validation-for="coupon.Expiration" class="text-danger"></span>
             </div>

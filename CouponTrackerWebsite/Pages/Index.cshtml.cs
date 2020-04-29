@@ -24,6 +24,7 @@ namespace CouponTrackerWebsite.Pages
         {
             var testCoupons = from m in _context.coupon
                               select m;
+            testCoupons = testCoupons.OrderByDescending(m => m.ID);
             coupon = await testCoupons.ToListAsync();
         }
     }
